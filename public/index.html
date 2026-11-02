@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100d1d" />
+  <title>STANDWAVE — Speech & Study Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="comic-noise"></div>
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+
+      <a class="brand" href="#">
+        <span class="brand-mark">S</span>
+        <span>
+          STAND<span class="brand-accent">WAVE</span>
+          <small>THE SPEECH STUDIO</small>
+        </span>
+      </a>
+
+      <div class="side-label">YOUR WORKSPACE</div>
+
+      <nav>
+        <button class="nav-link active" data-page="dashboard"><span>✦</span> Overview</button>
+        <button class="nav-link" data-page="tts"><span>♫</span> Text to Speech</button>
+        <button class="nav-link" data-page="transcribe"><span>◉</span> Live Transcriber</button>
+        <button class="nav-link" data-page="study"><span>✧</span> AI Study Assistant</button>
+        <button class="nav-link" data-page="enhancer"><span>✎</span> Script Enhancer</button>
+        <button class="nav-link" data-page="history"><span>◷</span> History & Logs</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="stand-card">
+          <div class="stand-symbol">ゴ</div>
+
+          <div>
+            <b>STAND POWER</b>
+            <small>Words become action.</small>
+          </div>
+        </div>
+
+        <div class="api-status">
+          <i></i>
+          Backend connection
+          <span id="apiStatus">Checking</span>
+        </div>
+
+      </div>
+
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+
+        <div>
+          <div class="eyebrow">
+            MULTILINGUAL SPEECH • PRODUCTIVITY • CREATIVITY
+          </div>
+
+          <div class="breadcrumb">
+            STANDWAVE
+            <span>/</span>
+            <b id="pageName">Overview</b>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <span class="status-pill">
+            <i></i>
+            STAND ACTIVE
+          </span>
+
+          <div class="avatar">SW</div>
+        </div>
+
+      </header>
+
+      <!-- DASHBOARD -->
+
+      <section class="page active" id="page-dashboard">
+
+        <div class="hero">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow gold">
+              YOUR NEXT CHAPTER STARTS HERE
+            </div>
+
+            <h1>
+              UNLEASH YOUR
+              <br>
+              <em>INNER VOICE.</em>
+            </h1>
+
+            <p>
+              A new kind of speech studio. Turn text into sound,
+              speech into words, and class notes into your next victory.
+            </p>
+
+            <button class="btn btn-gold" data-go="tts">
+              ENTER THE STUDIO
+              <span>↗</span>
+            </button>
+
+          </div>
+
+          <div class="hero-art">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="hero-glyph">ゴ<br><small>ゴ</small></div>
+            <div class="hero-stamp">SPEAK<br>YOUR<br>POWER</div>
+          </div>
+
+          <div class="hero-caption">
+            FIG. 01 — THE POWER OF EXPRESSION
+          </div>
+
+          <div class="hero-sfx" aria-hidden="true">ゴゴゴ</div>
+
+        </div>
+
+        <div class="section-heading">
+
+          <div>
+            <div class="eyebrow">CHOOSE YOUR ABILITY</div>
+            <h2>YOUR TOOLKIT</h2>
+          </div>
+
+          <span class="section-note">
+            SELECT A MODULE TO BEGIN ↘
+          </span>
+
+        </div>
+
+        <div class="tool-grid">
+
+          <article class="tool-card purple" data-open="tts">
+            <div class="tool-icon">♫</div>
+            <span class="card-index">01 / AUDIO</span>
+            <h3>TEXT TO SPEECH</h3>
+            <p>Turn written words into spoken audio with language, voice, pitch and speed controls.</p>
+            <b>OPEN MODULE ↗</b>
+          </article>
+
+          <article class="tool-card green" data-open="transcribe">
+            <div class="tool-icon">◉</div>
+            <span class="card-index">02 / CAPTURE</span>
+            <h3>LIVE TRANSCRIBER</h3>
+            <p>Capture spoken words in real time and export your transcript as a text file.</p>
+            <b>OPEN MODULE ↗</b>
+          </article>
+
+          <article class="tool-card gold" data-open="study">
+            <div class="tool-icon">✧</div>
+            <span class="card-index">03 / LEARN</span>
+            <h3>STUDY ASSISTANT</h3>
+            <p>Turn your notes into summaries, key points, revision prompts and flashcards.</p>
+            <b>OPEN MODULE ↗</b>
+          </article>
+
+          <article class="tool-card pink" data-open="enhancer">
+            <div class="tool-icon">✎</div>
+            <span class="card-index">04 / CREATE</span>
+            <h3>SCRIPT ENHANCER</h3>
+            <p>Clean up a speech or presentation script before reading it aloud.</p>
+            <b>OPEN MODULE ↗</b>
+          </article>
+
+        </div>
+
+        <div class="dashboard-bottom">
+
+          <div class="panel">
+
+            <div class="panel-head">
+
+              <div>
+                <div class="eyebrow">YOUR ACTIVITY</div>
+                <h3>RECENT LOGS</h3>
+              </div>
+
+              <button class="text-btn" data-go="history">
+                VIEW ALL ↗
+              </button>
+
+            </div>
+
+            <div id="recentList" class="recent-list">
+              <p class="muted">Your recent activity will appear here.</p>
+            </div>
+
+          </div>
+
+          <div class="quote-panel">
+            <span class="quote-mark">“</span>
+            <p>Every great journey begins with a single word.</p>
+            <small>— STANDWAVE PRINCIPLE</small>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- TEXT TO SPEECH -->
+
+      <section class="page" id="page-tts">
+
+        <div class="page-intro">
+
+          <div class="eyebrow gold">
+            MODULE 01 / AUDIO SYNTHESIS
+          </div>
+
+          <h1>TEXT TO <em>SPEECH.</em></h1>
+
+          <p>
+            Give your writing a voice. Select a language,
+            tune the delivery and listen.
+          </p>
+
+        </div>
+
+        <div class="workspace two-col">
+
+          <div class="panel">
+
+            <div class="panel-head">
+              <h3>YOUR SCRIPT</h3>
+              <span class="mini-tag">INPUT</span>
+            </div>
+
+            <textarea
+              id="ttsText"
+              rows="9"
+              placeholder="Type or paste the words you want to hear..."
+            ></textarea>
+
+            <div class="field-row">
+
+              <label>
+                LANGUAGE
+                <select id="ttsLang"></select>
+              </label>
+
+              <label>
+                BROWSER VOICE
+                <select id="ttsVoice">
+                  <option value="">Default system voice</option>
+                </select>
+              </label>
+
+            </div>
+
+            <div class="field-row">
+
+              <label>
+                MP3 AI VOICE
+
+                <select id="ttsAiVoice">
+                  <option value="Kore">Kore — Balanced</option>
+                  <option value="Puck">Puck — Expressive</option>
+                  <option value="Charon">Charon — Deep</option>
+                  <option value="Fenrir">Fenrir — Strong</option>
+                  <option value="Aoede">Aoede — Soft</option>
+                  <option value="Leda">Leda</option>
+                  <option value="Orus">Orus</option>
+                  <option value="Zephyr">Zephyr</option>
+                </select>
+
+              </label>
+
+            </div>
+
+            <div class="field-row">
+
+              <label>
+                SPEECH RATE
+
+                <output id="rateOut">1.0×</output>
+
+                <input
+                  id="ttsRate"
+                  type="range"
+                  min="0.5"
+                  max="2"
+                  step="0.1"
+                  value="1"
+                >
+              </label>
+
+              <label>
+                PITCH
+
+                <output id="pitchOut">1.0</output>
+
+                <input
+                  id="ttsPitch"
+                  type="range"
+                  min="0.5"
+                  max="2"
+                  step="0.1"
+                  value="1"
+                >
+              </label>
+
+            </div>
+
+            <div class="button-row">
+
+              <button class="btn btn-gold" id="speakBtn">
+                ▶ GENERATE SPEECH
+              </button>
+
+              <button class="btn btn-green" id="downloadMp3Btn">
+                ↓ DOWNLOAD MP3
+              </button>
+
+              <button class="btn btn-outline" id="stopSpeak">
+                ■ STOP
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="panel sound-panel">
+
+            <div class="eyebrow">AUDIO OUTPUT</div>
+
+            <div class="sound-orb">
+              <div class="sound-core">♫</div>
+            </div>
+
+            <h3 id="speechState">READY TO SPEAK?</h3>
+
+            <p class="muted" id="speechMessage">
+              Your browser's speech engine will generate the audio.
+            </p>
+
+            <div class="wave" id="wave">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+
+            <audio
+              id="mp3Preview"
+              controls
+              hidden
+              style="width:100%;max-width:280px;margin:12px auto"
+            ></audio>
+
+            <div class="mini-tag">
+              BROWSER SPEECH + GEMINI MP3
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- LIVE TRANSCRIBER -->
+
+      <section class="page" id="page-transcribe">
+
+        <div class="page-intro">
+
+          <div class="eyebrow green-text">
+            MODULE 02 / SPEECH RECOGNITION
+          </div>
+
+          <h1>LIVE <em>TRANSCRIBER.</em></h1>
+
+          <p>
+            Speak naturally. Watch your words appear
+            and export the transcript.
+          </p>
+
+        </div>
+
+        <div class="panel">
+
+          <div class="field-row">
+
+            <label>
+              RECOGNITION LANGUAGE
+              <select id="sttLang"></select>
+            </label>
+
+            <div class="record-status" id="recordStatus">
+              <i></i>
+              NOT RECORDING
+            </div>
+
+          </div>
+
+          <div class="transcript-box">
+
+            <textarea
+              id="transcript"
+              rows="12"
+              placeholder="Your live transcript will appear here..."
+            ></textarea>
+
+          </div>
+
+          <div class="transcript-meta">
+            <span id="wordCount">0 words</span>
+            <span id="charCount">0 characters</span>
+          </div>
+
+          <div class="button-row">
+
+            <button class="btn btn-green" id="startRecord">
+              ● START LISTENING
+            </button>
+
+            <button class="btn btn-outline" id="stopRecord">
+              STOP
+            </button>
+
+            <button class="btn btn-outline" id="copyTranscript">
+              COPY
+            </button>
+
+            <button class="btn btn-outline" id="downloadTranscript">
+              DOWNLOAD .TXT
+            </button>
+
+          </div>
+
+          <p class="hint">
+            Microphone access and browser support are required.
+            Chrome and Edge generally provide the best Web Speech API support.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- AI STUDY ASSISTANT -->
+
+      <section class="page" id="page-study">
+
+        <div class="page-intro">
+
+          <div class="eyebrow gold">
+            MODULE 03 / KNOWLEDGE POWER
+          </div>
+
+          <h1>STUDY <em>ASSISTANT.</em></h1>
+
+          <p>
+            Transform your study material into revision-ready content.
+          </p>
+
+        </div>
+
+        <div class="workspace two-col study-layout">
+
+          <div class="panel">
+
+            <div class="panel-head">
+              <h3>PASTE YOUR NOTES</h3>
+              <span class="mini-tag">SOURCE MATERIAL</span>
+            </div>
+
+            <textarea
+              id="studyText"
+              rows="15"
+              placeholder="Paste your class notes, textbook paragraphs or topic explanation here. (Minimum 30 characters)"
+            ></textarea>
+
+            <div class="study-modes">
+
+              <button class="mode-btn selected" data-mode="summary">
+                SUMMARY
+              </button>
+
+              <button class="mode-btn" data-mode="keypoints">
+                KEY POINTS
+              </button>
+
+              <button class="mode-btn" data-mode="quiz">
+                QUIZ
+              </button>
+
+              <button class="mode-btn" data-mode="flashcards">
+                FLASHCARDS
+              </button>
+
+            </div>
+
+            <button class="btn btn-gold full" id="studyBtn">
+              ✧ GENERATE STUDY MATERIAL
+            </button>
+
+          </div>
+
+          <div class="panel result-panel">
+
+            <div class="panel-head">
+              <h3>YOUR RESULTS</h3>
+              <span class="mini-tag">OUTPUT</span>
+            </div>
+
+            <div id="studyResult" class="result-content empty-result">
+
+              <div class="result-symbol">✧</div>
+
+              <h3>READY TO LEVEL UP?</h3>
+
+              <p>
+                Your generated study material will appear here.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <p class="hint">
+          Powered by Gemini through the secure Express backend.
+          Your API key stays on the server.
+        </p>
+
+      </section>
+
+      <!-- SCRIPT ENHANCER -->
+
+      <section class="page" id="page-enhancer">
+
+        <div class="page-intro">
+
+          <div class="eyebrow pink-text">
+            MODULE 04 / SCRIPT REFINEMENT
+          </div>
+
+          <h1>SCRIPT <em>ENHANCER.</em></h1>
+
+          <p>
+            Polish your words before they take the stage.
+          </p>
+
+        </div>
+
+        <div class="workspace two-col">
+
+          <div class="panel">
+
+            <div class="panel-head">
+              <h3>ORIGINAL SCRIPT</h3>
+            </div>
+
+            <textarea
+              id="enhanceInput"
+              rows="14"
+              placeholder="Paste your speech, narration or presentation script..."
+            ></textarea>
+
+            <button class="btn btn-pink full" id="enhanceBtn">
+              ✎ ENHANCE SCRIPT
+            </button>
+
+          </div>
+
+          <div class="panel">
+
+            <div class="panel-head">
+              <h3>REFINED VERSION</h3>
+
+              <button class="text-btn" id="copyEnhanced">
+                COPY ↗
+              </button>
+            </div>
+
+            <div id="enhancedOutput" class="enhanced-output">
+              Your refined script will appear here.
+            </div>
+
+            <button class="btn btn-outline full" id="useEnhanced">
+              USE IN TEXT TO SPEECH
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- HISTORY -->
+
+      <section class="page" id="page-history">
+
+        <div class="page-intro">
+
+          <div class="eyebrow gold">
+            YOUR JOURNEY / ACTIVITY LOG
+          </div>
+
+          <h1>HISTORY & <em>LOGS.</em></h1>
+
+          <p>
+            A record of your recent sessions and creations.
+          </p>
+
+        </div>
+
+        <div class="panel">
+
+          <div class="panel-head">
+
+            <h3>ALL ACTIVITY</h3>
+
+            <button class="text-btn danger" id="clearHistory">
+              CLEAR HISTORY
+            </button>
+
+          </div>
+
+          <div id="historyList" class="history-list">
+            <p class="muted">Loading history...</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <footer>
+        STANDWAVE © 2026
+        <span>BUILT FOR THE NEXT GENERATION OF CREATORS.</span>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
